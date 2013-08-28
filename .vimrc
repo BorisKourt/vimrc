@@ -29,7 +29,7 @@ set incsearch		" do incremental searching
 
 map Q gq
 syntax on
-set background=dark
+set background=light
 set number
 let g:solarized_termcolors=256
 colorscheme solarized

@@ -1,22 +1,34 @@
 set nocompatible
 
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'moll/vim-node'
+Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-sensible'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-surround'
+Bundle 'VimClojure'
+Bundle 'tpope/vim-haml'
+
+filetype plugin indent on
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
 set history=100		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 map Q gq
-execute pathogen#infect()
 syntax on
-filetype plugin indent on
 set background=dark
 set number
 let g:solarized_termcolors=256
@@ -27,12 +39,11 @@ colorscheme solarized
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-  set mouse=a
+set mouse=a
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
   set hlsearch
 endif
 
